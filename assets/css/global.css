@@ -11,6 +11,7 @@
   --color-attention: hsl( 215, 31%, 14% );
   --color-second: rgb(28, 176, 28);
   --color-base: rgb(6, 71, 6);
+  --cor-secundaria-opa: #104a1e6a;
   --color-bg-navbar: hsl( 158, 29%, 5% ) ;
   --color: hsl(0, 0%, 40%);
   --cor-bg-footer:hsl( 230, 14%, 8% );
@@ -59,8 +60,7 @@ a,
 img,
 span,
 input,
-button,
-i{
+button{
   display: block;
 }
 img { height: auto; }
@@ -243,7 +243,7 @@ body{
 
 /*//Home//*/
 .home{
-  background-image: url("assets/img/Background.jpg");
+  background-image: url('/assets/img/Background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: -265px;
@@ -274,27 +274,11 @@ body{
   justify-content: center;
 }
 
-/*//About//*/
-.about .container{
-  display: grid;
-  gap: 50px;
-}
-.about-content .section-text{
-  margin-bottom: 25px;
-}
-.img-about{
-  width: 100%;
-}
-.img-about img{
-    width: 100%;
-    max-height: fit-content;
-}
 
 /*//Stundat Life//*/
 .SLife{
   margin-top: 95px;
   background-color: var(--color-base);
-  padding-top: 50px;
   max-width: fit-content;
 }
 .SLife .list-grid{
@@ -303,10 +287,9 @@ body{
 .SLife-content{
   display: flex;
   flex-direction: column;
-
 }
 .SLife-content .SLife-content-title{
-  
+  margin-top: 50px;
   font-weight: 500;
   color: var(--color-second);
 }
@@ -326,9 +309,39 @@ body{
   width: 100%;
 }
 .img-SLife img{
-
   width: 100%;
   max-height: fit-content;
+}
+
+
+/*//About//*/
+.about .container{
+  display: grid;
+  gap: 50px;
+}
+.caixa{
+width: 100%;
+}
+.caixa img{
+  width: 100%;
+  max-height: fit-content;
+}
+
+.about-content .section-texto{margin-block-start: 20px; margin-block-end: 20px;}
+
+.about-content .about-lista{
+  display: flex;
+  gap: 25px;
+}
+.circle{
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 28px;
+  color: var(--color-base);
+  background-color: var(--cor-secundaria-opa);
+}
+.about-content .lista-grid{
+  margin-bottom: 20px;
 }
 
 /*//Cursos//*/
@@ -346,17 +359,52 @@ body{
 .cartao-curso:is(:hover, :focus-within){
   transform: scale(1.05);  
 }
+
 .cartao-content .cartao-titulo{padding-bottom: 15px;}
 
-/*//Galeria//*/
-.galeria .section-titulo{margin-bottom: 40px;}
-.galeria-lista{
+/*//gallery//*/
+.gallery .section-titulo{margin-bottom: 40px;}
+.gallery-lista{
   display: grid;
   gap: 15px;
 }
-.galeria .item-banner{border-radius: 30px;}
+.gallery .item-banner{border-radius: 30px;}
 
 /*//Noticias//*/
+
+.vantagens  .section-titulo{ margin-block: 15px 50px;}
+
+.vantagens-cartao{
+  width: 100%;
+  padding: 40px;
+  box-shadow: var(--shadow-2);
+  border-radius: 10px;
+  transition: var(--transition-1);
+}
+.vantagens-cartao:is(:hover, :focus-within){
+  background-color: var(--color-base);
+  color: var(--white);
+  transform: scale(1.05);
+}
+.vantagens .circle{
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 28px;
+  color: var(--color-base);
+  background-color: var(--cor-secundaria-opa);
+}
+.vantagens-cartao:is(:hover, :focus-within) .circle{
+  background-color: #15773163;
+  color: var(--white);
+}
+.vantagens-cartao:is(:hover, :focus-within) .cartao-titulo
+{
+  color: var(--white);
+}
+.vantagens-cartao .cartao-titulo{
+  margin-block: 25px 15px;
+}
+
 
 
 
@@ -478,3 +526,166 @@ body{
 }
 
 /*//Responsividade//*/
+
+@media (min-width: 575px){
+  :root{
+    --fs-1:5.4rem;
+  }
+  .container{
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  /*Header*/
+  .header .container{max-width: unset;}
+  .home{
+  background-position-x: -190px;
+  }
+}
+@media (min-width:768px ){
+
+  :root{
+    --fs-1: 7rem;
+    --fs-2: 4rem;
+    --fs-4: 3.2rem;
+  }
+
+  .container{
+    max-width: 740px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .btn{padding: 16px 32px;}
+
+  .section-texto .texto-centro{
+    max-width: 50ch;
+    margin: 0 auto;
+  }
+
+  .home{
+    background-position-x: -100px;
+  }
+
+  .SLife .list-grid{
+    gap: 10px;
+  }
+  
+.img-SLife{
+  width: 100%;
+  height: 350px;
+  background-color: aqua;
+}
+.img-SLife img{
+  height: 100%;
+}
+.SLife .list-grid li{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+.SLife .list-grid figure{
+  margin: auto;
+}
+  /*Vantagens*/
+  .vantagens .list-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+
+.cursos .list-grid{
+  grid-template-columns: 1fr 1fr;
+}
+/**/
+.gallery .gallery-lista{
+  grid-template-columns: 1fr 1fr;
+}
+  /*footer*/
+  .footer-top .container{ grid-template-columns: 1fr 1fr;}
+}
+@media (min-width:992px){
+  
+  .container{max-width: 960px;}
+
+
+  /*header*/
+  .btn-abrir-nav,
+  .navbar .topo-menu-lateral,
+  .overlay{display: none;}
+
+  .header{padding: 20px}
+
+  .navbar,
+  .navbar.header.ativa{all: unset;}
+
+  .navbar .navbar-lista{
+    display: flex;
+    gap: 40px;
+  }
+
+  .navbar .navbar-link{
+    color: var(--white);
+    font-weight: var(--fw-500);
+    padding: 0 0;
+  }
+
+  .header .btn-outline{
+    display: block;
+    color: var(--color-base);
+    font-weight: var(--fw-600);
+    text-transform: uppercase;
+    border: 1px solid var(--color-base);
+    padding: 7px 18px;
+    transition: var(--transition-1);
+  }
+  
+  .header .btn-outline:is(:hover, :focus){
+  background-color: var(--color-base);
+  color: var(--white);
+  }
+
+  .home{
+    background-position-x: -130px;
+  }
+
+
+  .about .container{
+    grid-template-columns: 500px 1fr;
+    place-items: center;
+  }
+  
+
+  .vantagens .list-grid{
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cursos .list-grid{
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .gallery .gallery-lista{
+  grid-template-columns: 1fr 1fr 1fr ;
+  }
+
+  /*footer*/
+  .footer .container{
+    grid-template-columns: 1fr 0.8fr 0.8fr 1fr;
+  }  
+  .footer-bottom .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.copyright{ margin-bottom: 0;}
+}
+@media (min-width:1200px){
+  :root{
+    --fs-1: 7.5rem;
+    --fs-4: 3.8rem;
+  }
+  .container{ max-width: 1240px;}
+  .btn-link{--fs-12: 1.5rem;}
+
+  .home{
+  background-position-x: 0px;
+  }
+}
