@@ -243,7 +243,7 @@ body{
 
 /*//Home//*/
 .home{
-  background-image: url("/assets/img/Background.jpg");
+  background-image: url("assets/img/Background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: -265px;
