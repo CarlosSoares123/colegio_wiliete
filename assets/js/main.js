@@ -44,3 +44,13 @@ const headerActivar = function () {
 
 addEventOnElem(window, 'scroll', headerActivar)
 
+
+const backToTopButton = document.querySelector('.voltar-topo')
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add('show')
+  } else {
+    backToTopButton.classList.remove('show')
+  }
+})
