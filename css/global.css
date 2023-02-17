@@ -278,10 +278,9 @@ body{
 /*//Stundat Life//*/
 .SLife{
   margin-top: 95px;
-  background-color: var(--color-base);
-  max-width: fit-content;
 }
 .SLife .list-grid{
+  background-color: var(--color-base);
   gap: 50px;
 }
 .SLife-content{
@@ -655,7 +654,7 @@ width: 100%;
   
 
   .vantagens .list-grid{
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   }
 
   .cursos .list-grid{
