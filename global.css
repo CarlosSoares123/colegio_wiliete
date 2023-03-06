@@ -244,9 +244,10 @@ body{
 
 /*//Home//*/
 .home{
-  background-image: url('../img/Background.jpg');
+  background-image: url('./Background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   background-position-x: -265px;
   padding-top: calc(var(--section-padding) + 50px);
   text-align: center;
@@ -260,7 +261,7 @@ body{
 }
 .home-title{
   margin: 10px 0 15px;
-  color: var(--white);
+  color: white;
 }
 .home-text{
   margin-bottom: 50px;
@@ -355,6 +356,7 @@ width: 100%;
   box-shadow: var(--shadow-1);
   border-radius: var(--radius-5);
   transition: var(--transition-1);
+  border: 3px solid;
 }
 .cartao-curso:is(:hover, :focus-within){
   transform: scale(1.05);  
@@ -367,6 +369,7 @@ width: 100%;
 .gallery-lista{
   display: grid;
   gap: 15px;
+  margin-bottom: 35px;
 }
 .gallery .item-banner{border-radius: 30px;}
 
@@ -622,10 +625,13 @@ width: 100%;
   }
 
   .navbar .navbar-link{
-    color: var(--white);
+    color: black;
+    font-size: 20px;
     font-weight: var(--fw-500);
     padding: 0 0;
+    transition: .2s ease;
   }
+  .header.ativa .navbar .navbar-link{color: white;}
 
   .header .btn-outline{
     display: block;
